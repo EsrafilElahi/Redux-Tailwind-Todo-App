@@ -16,7 +16,7 @@ function InputTodo() {
 
     return (
         <>
-            <div className='text-center capitalize w-screen bg-indigo-500 shadow-2xl rounded-lg mx-auto text-center py-12'>
+            <div className='text-center capitalize w-screen rounded-lg mx-auto text-center py-12'>
                 <h1 className='bg-aqua text-blue-400 text-4xl'>تعداد کارها : <span class="inline-flex items-center justify-center px-2 pt-3 pb-2 text-sm font-bold leading-none text-red-100 bg-purple-600 rounded-full">{todos.length}</span> </h1>
                 <form onSubmit={(e) => e.preventDefault()}>
                     <button type='submit' onClick={() => dispatch(addTodo(todo))} className='bg-transparent align-middle ml-2 mr-2 hover:text-purple-700 text-purple-800 focus:outline-none'><FontAwesomeIcon icon={faPlus} size='lg' /></button>
