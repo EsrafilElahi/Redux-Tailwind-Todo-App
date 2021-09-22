@@ -1,7 +1,9 @@
 import { combineReducers } from "redux";
-import {showReducer} from './ShowReducer'
-import {todoReducer} from './TodoReducer'
-import {todosReducer} from './TodosReducer'
+import { persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
+import { showReducer } from './ShowReducer'
+import { todoReducer } from './TodoReducer'
+import { todosReducer } from './TodosReducer'
 
 
 const rootReducer = combineReducers({
@@ -10,4 +12,13 @@ const rootReducer = combineReducers({
     todos: todosReducer
 })
 
-export default rootReducer;
+const configReducer = {
+    key: 'root',
+    storage
+}
+
+const persistedReducer = persistReducer(configReducer, rootReducer)
+
+
+
+export default persistedReducer;
